@@ -4,13 +4,19 @@
   "description": "A simple template generic TS API",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
-    "start": "ts-node src/index.ts"
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/index.ts",
+    "prestart": "tsc",
+    "start": "node dist/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "template",
+    "typescript",
+    "api"
+  ],
   "author": "gabriel-roque <https://github.com/gabriel-roque>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
