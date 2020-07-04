@@ -4,8 +4,9 @@
   "description": "A simple template generic TS API",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/index.ts",
-    "prestart": "tsc",
+    "dev": "nodemon -r --exec \"npm run start\" --watch src --ext ts",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "prestart": "npm run build",
     "start": "node dist/index.js"
   },
   "keywords": [
@@ -16,14 +17,24 @@
   "author": "gabriel-roque <https://github.com/gabriel-roque>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.0.14",
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "module-alias": "^2.2.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.6"
   },
   "devDependencies": {
+    "@types/node": "^14.0.14",
+    "nodemon": "^2.0.4",
     "ts-node-dev": "^1.0.0-pre.50"
+  },
+  "_moduleAliases": {
+    "@api": "dist/config/api",
+    "@routes": "dist/config/routes/routes",
+    "@server": "dist/config/server",
+    "@controllers": "dist/app/controllers"
   }
 }

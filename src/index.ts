@@ -1,11 +1,5 @@
-import express, { Request, Response } from 'express';
+import 'module-alias/register';
 
-const server = express();
+import server from '@server/server';
 
-server.use(express.json());
-
-server.get('/', (request: Request, response: Response) => {
-  return response.status(200).send({ status: 'OKAY!' });
-});
-
-server.listen(process.env.PORT || 3000);
+server.config.listen(process.env.PORT || 3000);
