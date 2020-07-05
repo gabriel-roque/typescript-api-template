@@ -1,12 +1,14 @@
 import { Router } from 'express';
-import { configCORS } from '@server/cors';
-import cors from 'cors';
+import { initSettingRouterServer } from './settings';
 
+/* SETTINGS ROUTES SERVER */
 const routes = Router();
-routes.use(cors(configCORS));
+initSettingRouterServer(routes);
 
+/* CONTROLLERS */
 import RootController from '@controllers/RootController';
 
+/* Root Routes */
 routes.get('/', RootController.index);
 
 export default routes;

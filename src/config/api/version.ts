@@ -1,8 +1,8 @@
-require('dotenv').config();
+import 'dotenv';
 
 const VERSION = 'v1';
 
-let api = {
+const api = {
   version: VERSION,
   prefix: `/${VERSION}/api`,
   app_url: '',
