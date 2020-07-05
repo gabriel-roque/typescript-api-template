@@ -1,4 +1,4 @@
-import 'dotenv';
+require('dotenv').config();
 
 const VERSION = 'v1';
 
