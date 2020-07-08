@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .ts",
     "test": "jest --watch",
     "prestart": "npm run build",
-    "start": "node dist/src/index.js"
+    "start": "NODE_ENV=production node dist/index.js"
   },
   "keywords": [
     "template",
@@ -50,12 +50,12 @@
     "tsconfig-paths": "^3.9.0"
   },
   "_moduleAliases": {
-    "@api": "dist/src/config/api",
-    "@routes": "dist/src/config/routes/routes",
-    "@server": "dist/src/config/server",
-    "@controllers": "dist/src/app/controllers",
-    "@middlewares": "dist/src/app/middlewares",
-    "@providers": "dist/src/providers",
-    "@database": "dist/src/cconfig/database"
+    "@api": "dist/config/api",
+    "@routes": "dist/config/routes/routes",
+    "@server": "dist/config/server",
+    "@controllers": "dist/app/controllers",
+    "@middlewares": "dist/app/middlewares",
+    "@providers": "dist/providers",
+    "@database": "dist/config/database"
   }
 }

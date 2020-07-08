@@ -10,17 +10,17 @@ const connection = createConnection({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   schema: process.env.DB_SCHEMA,
-  synchronize: process.env.ENVIRONMENT !== 'production' && true,
+  synchronize: process.env.NODE_ENV !== 'production' && true,
   logging: false,
-  entities: ['src/app/entity/**/*.ts'],
+  entities: process.env.NODE_ENV === 'production' ? ['dist/app/entity/**/*.ts'] : ['src/app/entity/**/*.ts'],
 });
 
 export default function initConnection() {
   connection
     .then(() => {
-      process.env.ENVIRONMENT !== 'production' && console.log('Database Connected!');
+      console.log('Database Connected!');
     })
     .catch((error) => {
-      process.env.ENVIRONMENT !== 'production' && console.log(`Failed in Connection Database! error: ${error}`);
+      process.env.NODE_ENV !== 'production' && console.log(`Failed in Connection Database! error: ${error}`);
     });
 }
