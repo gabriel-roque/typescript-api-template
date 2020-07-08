@@ -29,8 +29,11 @@
     "express": "^4.17.1",
     "express-mung": "^0.5.1",
     "module-alias": "^2.2.2",
+    "pg": "^8.2.1",
     "prettier": "^2.0.5",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^8.10.2",
+    "typeorm": "^0.2.25",
     "typescript": "^3.9.6"
   },
   "devDependencies": {
@@ -52,11 +55,7 @@
     "@server": "dist/config/server",
     "@controllers": "dist/app/controllers",
     "@middlewares": "dist/app/middlewares",
-    "@providers": "dist/providers"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "^@controllers(.*)$": "<rootDir>/src/app/controllers$1"
-    }
+    "@providers": "dist/providers",
+    "@database": "dist/config/database"
   }
 }
