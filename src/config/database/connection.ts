@@ -20,7 +20,7 @@ export default function initConnection() {
     .then(() => {
       process.env.ENVIRONMENT !== 'production' && console.log('Database Connected!');
     })
-    .catch(() => {
-      process.env.ENVIRONMENT !== 'production' && console.log('Failed in Connection Database!');
+    .catch((error) => {
+      process.env.ENVIRONMENT !== 'production' && console.log(`Failed in Connection Database! error: ${error}`);
     });
 }

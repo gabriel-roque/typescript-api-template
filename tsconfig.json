@@ -23,5 +23,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
-  }
+  },
+  "exclude": ["./**/*.test.ts", "./**/*.spec.ts", "./jest.config.js"]
 }
